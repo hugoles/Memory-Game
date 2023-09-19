@@ -1,0 +1,46 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    justify-content: center;
+    width: 80%;
+    margin: 10% auto;
+}
+
+.card {
+    aspect-ratio: 3/4;
+    width: 100%;
+    background-color: darkgoldenrod;
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.revealCard {
+    transform: rotateY(180deg);
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+    background-size: cover;
+    border: solid 10px goldenrod;
+    border-radius: 15px;
+
+}
+
+.front {
+    background-position: center;
+    background-size: cover;
+    transform: rotateY(180deg);
+}
+
+.back {
+    background-image: url("../cards/cardback.png");
+    background-position: center;
+    background-size: cover;
+    backface-visibility: hidden;
+}

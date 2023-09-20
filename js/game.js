@@ -1,6 +1,8 @@
 //script to memory game
 const grid = document.querySelector('.grid');
 
+
+
 const cardsimages = [
     'card1',
     'card2',
@@ -19,19 +21,30 @@ const createElement = (tag, className) => {
 let FirstCard = '';
 let SecondCard = '';
 
+const points = document.querySelector('.points');
+
+
+const checkMatch = () => {
+    if(FirstCard.parentNode.classList.contains('match') && SecondCard.parentNode.classList.contains('match')){
+        points.textContent++;
+        FirstCard.parentNode.classList.remove('match');
+        SecondCard.parentNode.classList.remove('match');
+    }
+    FirstCard = '';
+    SecondCard = '';
+}
+
 const checkCards = () => {
     if(FirstCard.dataset.framework === SecondCard.dataset.framework){
         FirstCard.parentNode.classList.add('match');
         SecondCard.parentNode.classList.add('match');
-        FirstCard = '';
-        SecondCard = '';
+        checkMatch();
     }
     else{
         setTimeout(() => {
             FirstCard.classList.remove('revealCard');
             SecondCard.classList.remove('revealCard');
-            FirstCard = '';
-            SecondCard = '';
+            checkMatch();
         }, 1000);
     }
 }

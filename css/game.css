@@ -1,3 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+}
+
+.container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.points {
+    position: flex;
+    top: 10%;
+    left: 10%;
+    font-size: 50px;
+    font-weight: bold;
+    color: aqua;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -39,7 +63,7 @@
 }
 
 .back {
-    background-image: url("../cards/cardback.png");
+    background-image: url("../cards/cardback.webp");
     background-position: center;
     background-size: cover;
     backface-visibility: hidden;
